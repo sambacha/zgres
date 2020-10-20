@@ -1,7 +1,6 @@
-*.swp
-
-server/node_modules
-pubsub/node_modules
-
-docker/volumes
-!docker/volumes/.gitkeep
+.DS_Store
+.pkcs
+.key
+key
+keys
+.pem

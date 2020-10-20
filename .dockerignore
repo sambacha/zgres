@@ -1,0 +1,10 @@
+Makefile
+.git
+.DS_Store
+node_modules
+.github/
+.circleci/
+README.md
+packages/
+docker-compose.yml
+bin/

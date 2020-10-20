@@ -8,7 +8,6 @@ It uses three concepts:
 2. [Notify](https://www.postgresql.org/docs/9.1/sql-notify.html) which is a simple postgres "publish" (the pub part of pubsub)
 3. [Listen](https://www.postgresql.org/docs/9.1/sql-listen.html) which is a simple postgres "subscribe" (the sub part of pubsub)
 
-
 ```sql
 -- Trigger notification for messaging to PG Notify
 CREATE FUNCTION notify_trigger() RETURNS trigger AS $trigger$
@@ -68,26 +67,26 @@ You can see the notify event happening on this line: `PERFORM pg_notify('db_noti
 Then in the [server](https://github.com/sambacha/zgres/blob/master/server/index.js), you can see the `LISTEN` command and the `.on('notification', ...)` event:
 
 ```javascript
-client.on('notification', function (msg) {
-  const payload = msg.payload
-  console.log(payload)
+client.on("notification", function (msg) {
+  const payload = msg.payload;
+  console.log(payload);
 
   // Send payload into a queue etc...
-  emitter.emit('event', payload);
+  emitter.emit("event", payload);
 });
 
 // Listen for NOTIFY calls
 (async () => {
-  var res = await client.query('LISTEN db_notifications')
+  var res = await client.query("LISTEN db_notifications");
 })();
 ```
 
 There's then a simple event listener that sends the payload down to the connected client, if the id matches some id requested by the client:
 
 ```javascript
-emitter.on('event', function listener(payload) {
-  if (payload['input_id'] === id) {
+emitter.on("event", function listener(payload) {
+  if (payload["input_id"] === id) {
     ws.send(payload);
   }
-})
+});
 ```

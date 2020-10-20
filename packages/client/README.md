@@ -1,93 +1,68 @@
-# zgres
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-> Postgres Real Time Event Stream
+## Available Scripts
 
-It uses three concepts:
+In the project directory, you can run:
 
-1. [Trigger functions](https://www.postgresql.org/docs/9.4/functions-trigger.html) which listen for any INSERT, UPDATE or DELETE commands on specified tables
-2. [Notify](https://www.postgresql.org/docs/9.1/sql-notify.html) which is a simple postgres "publish" (the pub part of pubsub)
-3. [Listen](https://www.postgresql.org/docs/9.1/sql-listen.html) which is a simple postgres "subscribe" (the sub part of pubsub)
+### `yarn start`
 
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-```sql
--- Trigger notification for messaging to PG Notify
-CREATE FUNCTION notify_trigger() RETURNS trigger AS $trigger$
-DECLARE
-  rec RECORD;
-  payload TEXT;
-  column_name TEXT;
-  column_value TEXT;
-  payload_items TEXT[];
-BEGIN
-  -- Set record row depending on operation
-  CASE TG_OP
-  WHEN 'INSERT', 'UPDATE' THEN
-    rec := NEW;
-  WHEN 'DELETE' THEN
-    rec := OLD;
-  ELSE
-    RAISE EXCEPTION 'Unknown TG_OP: "%". Should not occur!', TG_OP;
-  END CASE;
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
 
-  -- Get required fields
-  FOREACH column_name IN ARRAY TG_ARGV LOOP
-    EXECUTE format('SELECT $1.%I::TEXT', column_name)
-    INTO column_value
-    USING rec;
-    payload_items := array_append(payload_items, '"' || replace(column_name, '"', '\"') || '":"' || replace(column_value, '"', '\"') || '"');
-  END LOOP;
+### `yarn test`
 
-  -- Build the payload
-  payload := ''
-    || '{'
-    || '"timestamp":"' || CURRENT_TIMESTAMP                    || '",'
-    || '"operation":"' || TG_OP                                || '",'
-    || '"schema":"'    || TG_TABLE_SCHEMA                      || '",'
-    || '"table":"'     || TG_TABLE_NAME                        || '",'
-    || '"data":{'      || array_to_string(payload_items, ',')  || '}'
-    || '}';
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-  -- Notify the channel
-  PERFORM pg_notify('db_notifications', payload);
+### `yarn build`
 
-  RETURN rec;
-END;
-$trigger$ LANGUAGE plpgsql;
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
--- trigger
-CREATE TRIGGER inputs_notify AFTER INSERT OR UPDATE OR DELETE ON inputs
-FOR EACH ROW EXECUTE PROCEDURE notify_trigger(
-  'id',
-  'input_id',
-  'value'
-);
-```
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
 
-You can see the notify event happening on this line: `PERFORM pg_notify('db_notifications', payload);`
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-Then in the [server](https://github.com/sambacha/zgres/blob/master/server/index.js), you can see the `LISTEN` command and the `.on('notification', ...)` event:
+### `yarn eject`
 
-```javascript
-client.on('notification', function (msg) {
-  const payload = msg.payload
-  console.log(payload)
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-  // Send payload into a queue etc...
-  emitter.emit('event', payload);
-});
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-// Listen for NOTIFY calls
-(async () => {
-  var res = await client.query('LISTEN db_notifications')
-})();
-```
+Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-There's then a simple event listener that sends the payload down to the connected client, if the id matches some id requested by the client:
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-```javascript
-emitter.on('event', function listener(payload) {
-  if (payload['input_id'] === id) {
-    ws.send(payload);
-  }
-})
-```
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+
+### Analyzing the Bundle Size
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+
+### Making a Progressive Web App
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+
+### Advanced Configuration
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+
+### Deployment
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+
+### `yarn build` fails to minify
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
