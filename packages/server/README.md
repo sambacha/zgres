@@ -65,7 +65,7 @@ FOR EACH ROW EXECUTE PROCEDURE notify_trigger(
 
 You can see the notify event happening on this line: `PERFORM pg_notify('db_notifications', payload);`
 
-Then in the [server](server/server.js), you can see the `LISTEN` command and the `.on('notification', ...)` event:
+Then in the [server](https://github.com/sambacha/zgres/blob/master/server/index.js), you can see the `LISTEN` command and the `.on('notification', ...)` event:
 
 ```javascript
 client.on('notification', function (msg) {
