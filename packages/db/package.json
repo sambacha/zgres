@@ -5,8 +5,11 @@
   "author": "sam <sam@freighttrust.com>",
   "homepage": "https://github.com/freight-trust/",
   "license": "SEE LICENSE IN LICENSE",
-  "main": "lib/db.js",
+  "main": "listener.js",
   "directories": {
+    "volumes": "volumes",
+    "db": "db",
+    "resources": "resources",
     "lib": "lib",
     "test": "__tests__"
   },
