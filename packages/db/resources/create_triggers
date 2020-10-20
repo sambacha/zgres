@@ -1,0 +1,18 @@
+
+CREATE TRIGGER person_notify AFTER INSERT OR UPDATE OR DELETE ON income
+FOR EACH ROW EXECUTE PROCEDURE notify_trigger(
+  'id',
+  'email',
+  'username'
+);
+
+CREATE TRIGGER income_notify AFTER INSERT OR UPDATE OR DELETE ON income
+FOR EACH ROW EXECUTE PROCEDURE notify_trigger(
+  'id',
+  'person_id',
+  'amount',
+  'currency_code',
+  'start_date',
+  'end_date',
+  'data_source'
+);
