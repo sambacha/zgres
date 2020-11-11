@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+    - master
+    types: [opened, synchronize, closed]
+
+jobs:
+  check_labels:
+    runs-on: ubuntu-18.04
+    steps:
+    - name: debug
+      if: contains(github.event.pull_request.labels.*.name, 'debug')
+      env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: |
+        env
+        echo "$GITHUB_CONTEXT"
+    - uses: smartlyio/check-versioning-action@v5
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  
+build:
+    runs-on: ubuntu-18.04
+    if: github.event.action != 'closed'
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.ref }}
+    - name: Use Node.js 12.13.1
+      uses: actions/setup-node@v1
+      with:
+        node-version: '12.13.1'
+    - name: yarn install
+      run: yarn install --frozen-lockfile --link-duplicates --silent;
+    - name: yarn lint
+      run: yarn lint
+    - name: yarn build
+      run: yarn run --silent build
+    - name: yarn test
+      run: yarn test
