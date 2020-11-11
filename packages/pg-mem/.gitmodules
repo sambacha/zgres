@@ -1,0 +1,3 @@
+[submodule "pgsql-ast-parser"]
+	path = pgsql-ast-parser
+	url = https://github.com/oguimbal/pgsql-ast-parser
