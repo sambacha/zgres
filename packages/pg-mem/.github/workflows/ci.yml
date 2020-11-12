@@ -20,11 +20,6 @@ jobs:
     - uses: smartlyio/check-versioning-action@v5
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  
-build:
-    runs-on: ubuntu-18.04
-    if: github.event.action != 'closed'
-    steps:
     - uses: actions/checkout@v2
       with:
         ref: ${{ github.ref }}
@@ -34,9 +29,9 @@ build:
         node-version: '12.13.1'
     - name: yarn install
       run: yarn install --frozen-lockfile --link-duplicates --silent;
-    - name: yarn lint
-      run: yarn lint
-    - name: yarn build
-      run: yarn run --silent build
-    - name: yarn test
-      run: yarn test
+    - name: test
+      run: yarn run test
+    - name: coverage
+      run: yarn run cover
+    - name: typecheck
+      run: yarn run typecheck
