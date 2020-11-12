@@ -1,0 +1,148 @@
+packages/
+├── [ 288]  client/
+│   ├── [ 500]  Dockerfile
+│   ├── [2.8K]  README.md
+│   ├── [544K]  package-lock.json
+│   ├── [ 621]  package.json
+│   └── [ 288]  src/
+│       ├── [ 306]  App.css
+│       ├── [1.2K]  App.js
+│       ├── [ 248]  App.test.js
+│       ├── [ 366]  index.css
+│       ├── [ 452]  index.js
+│       ├── [8.0K]  logo.svg
+│       └── [4.8K]  serviceWorker.js
+├── [ 320]  db/
+│   ├── [  99]  README.md
+│   ├── [  96]  __tests__/
+│   │   └── [  90]  db.test.js
+│   ├── [ 439]  listener.js
+│   ├── [1016]  notify_trigger.sql
+│   ├── [ 647]  package.json
+│   ├── [ 128]  resources/
+│   │   └── [ 378]  create_triggers
+│   ├── [  96]  tests/
+│   └── [  96]  volumes/
+├── [ 192]  interface/
+│   ├── [ 120]  README.md
+│   ├── [  96]  __tests__/
+│   │   └── [ 104]  interface.test.js
+│   ├── [ 598]  package.json
+│   └── [ 223]  wrapper.sh*
+├── [ 704]  pg-mem/
+│   ├── [ 717]  CONTRIBUTING.md
+│   ├── [ 384]  deno-test.ts
+│   ├── [4.1K]  deno-transpile.js
+│   ├── [3.6K]  package.json
+│   ├── [  64]  pgsql-ast-parser/
+│   ├── [ 288]  playground/
+│   │   ├── [ 157]  error.tsx
+│   │   ├── [ 721]  grid.tsx
+│   │   ├── [1.9K]  index.css
+│   │   ├── [ 411]  index.html
+│   │   ├── [ 13K]  index.tsx
+│   │   ├── [ 102]  tsconfig.json
+│   │   └── [1.2K]  value.tsx
+│   ├── [5.0K]  playground.webpack.config.js
+│   ├── [7.8K]  readme.md
+│   ├── [  96]  samples/
+│   │   └── [ 128]  typeorm/
+│   │       ├── [2.6K]  joins.ts
+│   │       └── [2.0K]  simple.ts
+│   ├── [ 160]  service/
+│   │   ├── [2.0K]  index.js
+│   │   ├── [ 446]  listener.js
+│   │   └── [  96]  migrations/
+│   │       └── [2.0K]  00001_create-initial-tables.sql
+│   ├── [ 704]  src/
+│   │   ├── [7.9K]  adapters.ts
+│   │   ├── [2.7K]  ast-visitor.ts
+│   │   ├── [ 14K]  btree-index.ts
+│   │   ├── [6.0K]  column.ts
+│   │   ├── [ 24K]  datatypes.ts
+│   │   ├── [3.9K]  db.ts
+│   │   ├── [5.2K]  functions.ts
+│   │   ├── [  60]  index.ts
+│   │   ├── [ 14K]  interfaces-private.ts
+│   │   ├── [5.7K]  interfaces.ts
+│   │   ├── [ 462]  pg-escape.ts
+│   │   ├── [ 18K]  predicate.ts
+│   │   ├── [ 21K]  query.ts
+│   │   ├── [ 480]  schema/
+│   │   │   ├── [5.8K]  columns-list.ts
+│   │   │   ├── [ 395]  consts.ts
+│   │   │   ├── [4.0K]  custom-index.ts
+│   │   │   ├── [ 413]  index.ts
+│   │   │   ├── [2.1K]  pg-attribute-list.ts
+│   │   │   ├── [5.1K]  pg-class-list.ts
+│   │   │   ├── [3.6K]  pg-constraints-list.ts
+│   │   │   ├── [1.7K]  pg-index-list.ts
+│   │   │   ├── [1.1K]  pg-namespace-list.ts
+│   │   │   ├── [2.4K]  pg-type-list.ts
+│   │   │   ├── [3.6K]  readonly-table.ts
+│   │   │   ├── [3.7K]  table-index.ts
+│   │   │   └── [3.0K]  table-list.ts
+│   │   ├── [ 20K]  table.ts
+│   │   ├── [ 864]  tests/
+│   │   │   ├── [4.5K]  alter-table.queries.spec.ts
+│   │   │   ├── [5.3K]  conversions.spec.ts
+│   │   │   ├── [2.6K]  count.spec.ts
+│   │   │   ├── [2.0K]  delete.queries.spec.ts
+│   │   │   ├── [4.0K]  foreign-keys.spec.ts
+│   │   │   ├── [1.9K]  fork.spec.ts
+│   │   │   ├── [ 14K]  indexes.spec.ts
+│   │   │   ├── [6.0K]  insert.queries.spec.ts
+│   │   │   ├── [ 851]  invalid-syntaxes.spec.ts
+│   │   │   ├── [ 28K]  join.spec.ts
+│   │   │   ├── [1.1K]  limit.queries.spec.ts
+│   │   │   ├── [2.4K]  nulls.spec.ts
+│   │   │   ├── [ 16K]  operators.queries.spec.ts
+│   │   │   ├── [2.2K]  order-by.queries.spec.ts
+│   │   │   ├── [1.2K]  pg-promise.spec.ts
+│   │   │   ├── [7.3K]  schema-manipulation.spec.ts
+│   │   │   ├── [4.4K]  select.queries.spec.ts
+│   │   │   ├── [9.5K]  simple-queries.spec.ts
+│   │   │   ├── [1.7K]  slonik.spec.ts
+│   │   │   ├── [1.7K]  test-utils.spec.ts
+│   │   │   ├── [1.0K]  test-utils.ts
+│   │   │   ├── [1.4K]  transactions.queries.spec.ts
+│   │   │   ├── [ 13K]  typeorm.spec.ts
+│   │   │   ├── [3.5K]  update.queries.spec.ts
+│   │   │   └── [2.6K]  where.queries.spec.ts
+│   │   ├── [1.8K]  transaction.ts
+│   │   ├── [ 704]  transforms/
+│   │   │   ├── [ 12K]  aggregation.ts
+│   │   │   ├── [2.8K]  alias.ts
+│   │   │   ├── [2.0K]  and-filter.ts
+│   │   │   ├── [ 901]  array-filter.ts
+│   │   │   ├── [1.7K]  between-filter.ts
+│   │   │   ├── [8.5K]  build-filter.ts
+│   │   │   ├── [2.1K]  eq-filter.ts
+│   │   │   ├── [ 648]  false-filter.ts
+│   │   │   ├── [2.0K]  in-filter.ts
+│   │   │   ├── [1.5K]  ineq-filter.ts
+│   │   │   ├── [ 14K]  join.ts
+│   │   │   ├── [1.5K]  limit.ts
+│   │   │   ├── [2.0K]  not-in-filter.ts
+│   │   │   ├── [1.4K]  or-filter.ts
+│   │   │   ├── [2.2K]  order-by.ts
+│   │   │   ├── [1.5K]  restrictive-index.ts
+│   │   │   ├── [7.3K]  selection.ts
+│   │   │   ├── [1.2K]  seq-scan.ts
+│   │   │   ├── [1.7K]  startswith-filter.ts
+│   │   │   └── [5.2K]  transform-base.ts
+│   │   ├── [9.0K]  utils.ts
+│   │   └── [ 14K]  valuetypes.ts
+│   ├── [ 116]  tests-index.js
+│   ├── [ 632]  todo.md
+│   ├── [1.2K]  tsconfig.deno.json
+│   ├── [ 678]  tsconfig.json
+│   └── [2.2K]  webpack.config.js
+└── [ 256]  server/
+    ├── [ 500]  Dockerfile
+    ├── [2.0K]  index.js
+    ├── [  96]  migrations/
+    │   └── [2.0K]  00001_create-initial-tables.sql
+    └── [ 389]  package.json
+
+22 directories, 123 files

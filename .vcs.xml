@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tree>
+  <directory name=".">
+    <file name="Dockerfile" size="302"></file>
+    <file name="LICENSE" size="1084"></file>
+    <file name="Makefile" size="257"></file>
+    <file name="README.adoc" size="2915"></file>
+    <file name="docker-compose.yml" size="944"></file>
+    <file name="lerna.json" size="135"></file>
+    <file name="package.json" size="515"></file>
+    <directory name="packages" size="224">
+      <directory name="client" size="288">
+        <file name="Dockerfile" size="500"></file>
+        <file name="README.md" size="2884"></file>
+        <file name="package-lock.json" size="557152"></file>
+        <file name="package.json" size="621"></file>
+        <directory name="src" size="288">
+          <file name="App.css" size="306"></file>
+          <file name="App.js" size="1271"></file>
+          <file name="App.test.js" size="248"></file>
+          <file name="index.css" size="366"></file>
+          <file name="index.js" size="452"></file>
+          <file name="logo.svg" size="8205"></file>
+          <file name="serviceWorker.js" size="4961"></file>
+        </directory>
+      </directory>
+      <directory name="db" size="320">
+        <file name="README.md" size="99"></file>
+        <directory name="__tests__" size="96">
+          <file name="db.test.js" size="90"></file>
+        </directory>
+        <file name="listener.js" size="439"></file>
+        <file name="notify_trigger.sql" size="1016"></file>
+        <file name="package.json" size="647"></file>
+        <directory name="resources" size="128">
+          <file name="create_triggers" size="378"></file>
+        </directory>
+        <directory name="tests" size="96">
+        </directory>
+        <directory name="volumes" size="96">
+        </directory>
+      </directory>
+      <directory name="interface" size="192">
+        <file name="README.md" size="120"></file>
+        <directory name="__tests__" size="96">
+          <file name="interface.test.js" size="104"></file>
+        </directory>
+        <file name="package.json" size="598"></file>
+        <file name="wrapper.sh" size="223"></file>
+      </directory>
+      <directory name="pg-mem" size="704">
+        <file name="CONTRIBUTING.md" size="717"></file>
+        <file name="deno-test.ts" size="384"></file>
+        <file name="deno-transpile.js" size="4201"></file>
+        <file name="package.json" size="3685"></file>
+        <directory name="pgsql-ast-parser" size="64">
+        </directory>
+        <directory name="playground" size="288">
+          <file name="error.tsx" size="157"></file>
+          <file name="grid.tsx" size="721"></file>
+          <file name="index.css" size="1948"></file>
+          <file name="index.html" size="411"></file>
+          <file name="index.tsx" size="13808"></file>
+          <file name="tsconfig.json" size="102"></file>
+          <file name="value.tsx" size="1221"></file>
+        </directory>
+        <file name="playground.webpack.config.js" size="5168"></file>
+        <file name="readme.md" size="7991"></file>
+        <directory name="samples" size="96">
+          <directory name="typeorm" size="128">
+            <file name="joins.ts" size="2657"></file>
+            <file name="simple.ts" size="2048"></file>
+          </directory>
+        </directory>
+        <directory name="service" size="160">
+          <file name="index.js" size="2065"></file>
+          <file name="listener.js" size="446"></file>
+          <directory name="migrations" size="96">
+            <file name="00001_create-initial-tables.sql" size="2020"></file>
+          </directory>
+        </directory>
+        <directory name="src" size="704">
+          <file name="adapters.ts" size="8125"></file>
+          <file name="ast-visitor.ts" size="2776"></file>
+          <file name="btree-index.ts" size="14178"></file>
+          <file name="column.ts" size="6147"></file>
+          <file name="datatypes.ts" size="24550"></file>
+          <file name="db.ts" size="3953"></file>
+          <file name="functions.ts" size="5283"></file>
+          <file name="index.ts" size="60"></file>
+          <file name="interfaces-private.ts" size="14018"></file>
+          <file name="interfaces.ts" size="5791"></file>
+          <file name="pg-escape.ts" size="462"></file>
+          <file name="predicate.ts" size="18559"></file>
+          <file name="query.ts" size="21966"></file>
+          <directory name="schema" size="480">
+            <file name="columns-list.ts" size="5895"></file>
+            <file name="consts.ts" size="395"></file>
+            <file name="custom-index.ts" size="4064"></file>
+            <file name="index.ts" size="413"></file>
+            <file name="pg-attribute-list.ts" size="2130"></file>
+            <file name="pg-class-list.ts" size="5219"></file>
+            <file name="pg-constraints-list.ts" size="3638"></file>
+            <file name="pg-index-list.ts" size="1790"></file>
+            <file name="pg-namespace-list.ts" size="1148"></file>
+            <file name="pg-type-list.ts" size="2418"></file>
+            <file name="readonly-table.ts" size="3684"></file>
+            <file name="table-index.ts" size="3783"></file>
+            <file name="table-list.ts" size="3031"></file>
+          </directory>
+          <file name="table.ts" size="20695"></file>
+          <directory name="tests" size="864">
+            <file name="alter-table.queries.spec.ts" size="4596"></file>
+            <file name="conversions.spec.ts" size="5462"></file>
+            <file name="count.spec.ts" size="2699"></file>
+            <file name="delete.queries.spec.ts" size="2049"></file>
+            <file name="foreign-keys.spec.ts" size="4126"></file>
+            <file name="fork.spec.ts" size="1929"></file>
+            <file name="indexes.spec.ts" size="14295"></file>
+            <file name="insert.queries.spec.ts" size="6171"></file>
+            <file name="invalid-syntaxes.spec.ts" size="851"></file>
+            <file name="join.spec.ts" size="28635"></file>
+            <file name="limit.queries.spec.ts" size="1137"></file>
+            <file name="nulls.spec.ts" size="2415"></file>
+            <file name="operators.queries.spec.ts" size="16404"></file>
+            <file name="order-by.queries.spec.ts" size="2224"></file>
+            <file name="pg-promise.spec.ts" size="1208"></file>
+            <file name="schema-manipulation.spec.ts" size="7513"></file>
+            <file name="select.queries.spec.ts" size="4467"></file>
+            <file name="simple-queries.spec.ts" size="9680"></file>
+            <file name="slonik.spec.ts" size="1700"></file>
+            <file name="test-utils.spec.ts" size="1735"></file>
+            <file name="test-utils.ts" size="1037"></file>
+            <file name="transactions.queries.spec.ts" size="1389"></file>
+            <file name="typeorm.spec.ts" size="13039"></file>
+            <file name="update.queries.spec.ts" size="3613"></file>
+            <file name="where.queries.spec.ts" size="2654"></file>
+          </directory>
+          <file name="transaction.ts" size="1822"></file>
+          <directory name="transforms" size="704">
+            <file name="aggregation.ts" size="11849"></file>
+            <file name="alias.ts" size="2875"></file>
+            <file name="and-filter.ts" size="2052"></file>
+            <file name="array-filter.ts" size="901"></file>
+            <file name="between-filter.ts" size="1710"></file>
+            <file name="build-filter.ts" size="8739"></file>
+            <file name="eq-filter.ts" size="2124"></file>
+            <file name="false-filter.ts" size="648"></file>
+            <file name="in-filter.ts" size="2061"></file>
+            <file name="ineq-filter.ts" size="1524"></file>
+            <file name="join.ts" size="14197"></file>
+            <file name="limit.ts" size="1491"></file>
+            <file name="not-in-filter.ts" size="2048"></file>
+            <file name="or-filter.ts" size="1433"></file>
+            <file name="order-by.ts" size="2203"></file>
+            <file name="restrictive-index.ts" size="1583"></file>
+            <file name="selection.ts" size="7494"></file>
+            <file name="seq-scan.ts" size="1238"></file>
+            <file name="startswith-filter.ts" size="1732"></file>
+            <file name="transform-base.ts" size="5326"></file>
+          </directory>
+          <file name="utils.ts" size="9240"></file>
+          <file name="valuetypes.ts" size="14159"></file>
+        </directory>
+        <file name="tests-index.js" size="116"></file>
+        <file name="todo.md" size="632"></file>
+        <file name="tsconfig.deno.json" size="1218"></file>
+        <file name="tsconfig.json" size="678"></file>
+        <file name="webpack.config.js" size="2296"></file>
+      </directory>
+      <directory name="server" size="256">
+        <file name="Dockerfile" size="500"></file>
+        <file name="index.js" size="2044"></file>
+        <directory name="migrations" size="96">
+          <file name="00001_create-initial-tables.sql" size="2094"></file>
+        </directory>
+        <file name="package.json" size="389"></file>
+      </directory>
+    </directory>
+    <file name="pgmem.json" size="3685"></file>
+    <directory name="resources" size="96">
+    </directory>
+    <directory name="scripts" size="128">
+      <file name="docker_build.sh" size="579"></file>
+      <file name="docker_entrypoint.sh" size="242"></file>
+    </directory>
+    <directory name="tests" size="96">
+    </directory>
+    <file name="tsconfig.build.json" size="179"></file>
+    <file name="tsconfig.json" size="678"></file>
+    <file name="vcs.txt" size="7094"></file>
+    <directory name="volumes" size="96">
+    </directory>
+  </directory>
+  <report>
+    <directories>27</directories>
+    <files>136</files>
+  </report>
+</tree>
